@@ -1,11 +1,24 @@
 {
-  "name": "cadastro-de-pessoas-e-atividades",
+  "name": "phas",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint src/**/*.{js,ts} --max-warnings=0",
+    "server": "nodemon src/api/app.js"
   },
   "keywords": [],
   "author": "",
@@ -25,10 +38,9 @@
     "eslint-plugin-vue": "^9.17.0",
     "husky": "^8.0.3",
     "jest": "^29.6.3",
+    "lint-staged": "^14.0.1",
     "nodemon": "^3.0.1",
     "prettier": "3.0.2",
-    "typescript": "^5.1.6",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "typescript": "^5.1.6"
   }
 }
