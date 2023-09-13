@@ -2,6 +2,7 @@ import express from "express";
 import { sequelize } from "./config/config";
 import path from "path";
 import passport from "./config/auth";
+import session from "express-session"
 import userRoute from "./routes/userRoute";
 import peopleRoute from "./routes/peopleRoute";
 import activityRoute from "./routes/activityRoute";
