@@ -9,8 +9,8 @@ class People extends Model {
   public email!: string;
   public addressId!: number;
   public userId!: number;
-  public createdAt!: Date;
-  public updatedAt!: Date;
+  public readonly createdAt!: Date;
+  public readonly updatedAt!: Date;
 
   static associate(models: Models) {
     this.belongsTo(models.Users, {

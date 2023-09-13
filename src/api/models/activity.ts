@@ -8,8 +8,8 @@ class Activity extends Model {
   public description!: string;
   public initialDate!: Date;
   public endDate!: Date;
-  public createdAt!: Date;
-  public updatedAt!: Date;
+  public readonly createdAt!: Date;
+  public readonly updatedAt!: Date;
 
   static associate(models: Models) {
     this.belongsTo(models.Users, {

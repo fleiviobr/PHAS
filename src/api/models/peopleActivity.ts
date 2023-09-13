@@ -5,8 +5,8 @@ import Models from "../interfaces/models";
 class PeopleActivity extends Model {
   public personId!: number;
   public activityId!: number;
-  public createdAt!: Date;
-  public updatedAt!: Date;
+  public readonly createdAt!: Date;
+  public readonly updatedAt!: Date;
 
   static associate(models: Models) {
     this.belongsTo(models.Activity, {

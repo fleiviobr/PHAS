@@ -9,8 +9,8 @@ class Address extends Model {
   public neighborhood!: string;
   public city!: string;
   public country!: string;
-  public createdAt!: Date;
-  public updatedAt!: Date;
+  public readonly createdAt!: Date;
+  public readonly updatedAt!: Date;
 }
 
 Address.init(
