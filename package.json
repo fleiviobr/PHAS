@@ -14,6 +14,9 @@
     ]
   },
   "scripts": {
+    "format": "yarn prettier --check .",
+    "format:fix": "yarn prettier --write .",
+    "lint:fix": "yarn lint --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "lint": "eslint src/**/*.{js,ts} --max-warnings=0",

@@ -35,11 +35,11 @@ class UserController {
   }
 
   async updateUser(req: Request, res: Response) {
-    const userId = Number(req.params.id);
+    const idUser = Number(req.params.id);
 
     try {
       const [updatedRowsCount] = await User.update(req.body, {
-        where: { id: userId },
+        where: { idUser: idUser },
       });
 
       if (updatedRowsCount === 0) {

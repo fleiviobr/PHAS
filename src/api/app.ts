@@ -1,28 +1,26 @@
 import express from "express";
 import { sequelize } from "./config/config";
 import path from "path";
-import passport from "./config/auth";
-import session from "express-session"
+// import passport from "./config/auth";
+// import session from "express-session"
 import userRoute from "./routes/userRoute";
 import peopleRoute from "./routes/peopleRoute";
 import activityRoute from "./routes/activityRoute";
-import loginRouter from "./routes/login";
+// import loginRouter from "./routes/login";
+import address from "./models/address";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(express.json());
+address.sync();
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
   res.send("Servidor aberto");
 });
-
-app.use("/login", loginRouter);
-
 app.use("/users", userRoute);
 
 app.use("/people", peopleRoute);
